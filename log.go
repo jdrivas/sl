@@ -8,9 +8,10 @@ type SL struct {
   Logger *logrus.Logger
 }
 
-func New(l *logrus.Logger) (*SL) {
+func New() (*SL) {
+// func New(l *logrus.Logger) (*SL) {
   sl := new(SL)
-  sl.Logger = l
+  sl.Logger = logrus.New()
   return sl
 }
 
