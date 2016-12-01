@@ -49,7 +49,7 @@ func (l *SL) Error(fields logrus.Fields, msg string, err error) {
   if err == nil {
     e.Error(msg)
   } else {
-    e.Error(msg)
+    e.WithError(err).Error(msg)
   }
 }
 
