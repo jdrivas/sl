@@ -1,7 +1,6 @@
 package sl
   
 import (
-  "fmt"
   "github.com/Sirupsen/logrus"
 )
 
@@ -90,10 +89,7 @@ func (l *SL) AddDefaultFields(f logrus.Fields) {
 }
 
 func (l *SL) prepare(fields logrus.Fields) (*logrus.Entry) {
-  fmt.Printf("Preparing ... with %#v\n", fields)
-  fmt.Printf("Default: ... with %#v\n", l.DefFields)
   f := l.mergeDefault(fields)
-  fmt.Printf("Merged is: %#v\n", f)
   return l.Logger.WithFields(f)
 }
 
